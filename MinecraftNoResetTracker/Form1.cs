@@ -61,6 +61,12 @@ namespace MinecraftNoResetTracker
                 totalTime += TimeSpan.Parse(runsListBox.Items[i].ToString());
             }
 
+            if(runsListBox.Items.Count == 0)
+            {
+                totalTime = TimeSpan.Parse("00:00:00");
+                return totalTime.ToString();
+            }
+
             return (totalTime / runsListBox.Items.Count).ToString().Substring(0,8);
         }
 
